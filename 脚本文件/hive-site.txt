@@ -1,0 +1,25 @@
+<property>
+    <name>hive.support.concurrency</name>
+    <value>true</value>
+</property>
+<property>
+    <name>hive.exec.dynamic.partition.mode</name>
+    <value>nonstrict</value>
+</property>
+<property>
+    <name>hive.txn.manager</name>
+    <value>org.apache.hadoop.hive.ql.lockmgr.DbTxnManager</value>
+</property>
+<property>
+    <name>hive.compactor.initiator.on</name>
+    <value>true</value>
+</property>
+<property>
+    <name>hive.compactor.worker.threads</name>
+    <value>1</value>
+    <!--这里的线程数必须大于0 :理想状态和分桶数一致-->
+</property>
+<property>
+    <name>hive.enforce.bucketing</name>
+    <value>true</value>
+</property>

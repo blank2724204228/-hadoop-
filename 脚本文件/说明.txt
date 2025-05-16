@@ -1,0 +1,18 @@
+1. 调整Flume启动脚本
+
+Flume启动脚本中通常有一个设置JVM参数的地方，您需要找到这个地方并增加-Xmx参数的值。这个设置可能在flume-env.sh文件中，这个文件通常位于Flume的conf目录下。如果flume-env.sh不存在，您可能需要从flume-env.sh.template复制一份并重命名。
+
+例如，要将最大堆内存设置为2GB，您可以在flume-env.sh中添加或修改以下行：
+
+bash
+
+export JAVA_OPTS="-Xms512m -Xmx2048m"
+
+
+
+show variables like 'character%';
+
+set character_set_database=utf8;
+set character_set_server=utf8;
+
+show variables like 'character%';

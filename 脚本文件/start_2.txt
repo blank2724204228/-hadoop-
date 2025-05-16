@@ -1,0 +1,173 @@
+CREATE DATABASE IF NOT EXISTS pm;
+USE pm;
+
+CREATE TABLE `pm_data` (
+  `num_id` INT, -- 序列号
+  `province_name` STRING, -- 省
+  `city_name` STRING, -- 市
+  `county_name` STRING, -- 县
+  `record_year` INT, -- 年份
+  `average_value` DOUBLE, -- 均值
+  `total_sum` DOUBLE, -- 总和
+  `min_value` DOUBLE, -- 最小值
+  `max_value` DOUBLE, -- 最大值
+  `std_deviation` DOUBLE -- 标准差
+)
+CLUSTERED BY(num_id) INTO 3 BUCKETS
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS ORC
+TBLPROPERTIES ('transactional'='true');
+
+
+-- 年度全国均值
+CREATE TABLE `pm`.`annual_national_average` (
+  `record_year` DOUBLE,
+  `average_value` DOUBLE
+);
+
+-- 年度全国总和
+CREATE TABLE `pm`.`annual_national_sum` (
+  `record_year` DOUBLE,
+  `total_sum` DOUBLE
+);
+
+-- 年度全国最大值
+CREATE TABLE `pm`.`annual_national_max` (
+  `record_year` DOUBLE,
+  `max_value` DOUBLE
+);
+
+-- 年度全国最小值
+CREATE TABLE `pm`.`annual_national_min` (
+  `record_year` DOUBLE,
+  `min_value` DOUBLE
+);
+
+-- 年度全国标准差
+CREATE TABLE `pm`.`annual_national_std_dev` (
+  `record_year` DOUBLE,
+  `std_deviation` DOUBLE
+);
+
+
+-- 江西省年度均值
+CREATE TABLE `pm`.`jiangxi_annual_average` (
+  `record_year` DOUBLE,
+  `average_value` DOUBLE
+);
+
+-- 江西省年度总和
+CREATE TABLE `pm`.`jiangxi_annual_sum` (
+  `record_year` DOUBLE,
+  `total_sum` DOUBLE
+);
+
+-- 江西省年度最大值
+CREATE TABLE `pm`.`jiangxi_annual_max` (
+  `record_year` DOUBLE,
+  `max_value` DOUBLE
+);
+
+-- 江西省年度最小值
+CREATE TABLE `pm`.`jiangxi_annual_min` (
+  `record_year` DOUBLE,
+  `min_value` DOUBLE
+);
+
+-- 江西省年度标准差
+CREATE TABLE `pm`.`jiangxi_annual_std_dev` (
+  `record_year` DOUBLE,
+  `std_deviation` DOUBLE
+);
+
+
+
+CREATE TABLE `jiangxi_city_average` (
+  `city_name` STRING,
+  `average_value` DOUBLE
+);
+
+CREATE TABLE `jiangxi_city_sum` (
+  `city_name` STRING,
+  `total_sum` DOUBLE
+);
+
+CREATE TABLE `jiangxi_city_max` (
+  `city_name` STRING,
+  `max_value` DOUBLE
+);
+
+CREATE TABLE `jiangxi_city_min` (
+  `city_name` STRING,
+  `min_value` DOUBLE
+);
+
+CREATE TABLE `jiangxi_city_std_dev` (
+  `city_name` STRING,
+  `std_deviation` DOUBLE
+);
+
+
+
+
+
+CREATE TABLE `nanchang_annual_average` (
+  `record_year` DOUBLE,
+  `average_value` DOUBLE
+);
+
+CREATE TABLE `nanchang_annual_sum` (
+  `record_year` DOUBLE,
+  `total_sum` DOUBLE
+);
+
+CREATE TABLE `nanchang_annual_max` (
+  `record_year` DOUBLE,
+  `max_value` DOUBLE
+);
+
+CREATE TABLE `nanchang_annual_min` (
+  `record_year` DOUBLE,
+  `min_value` DOUBLE
+);
+
+CREATE TABLE `nanchang_annual_std_dev` (
+  `record_year` DOUBLE,
+  `std_deviation` DOUBLE
+);
+
+
+
+
+-- 各省均值
+CREATE TABLE `pm`.`provincial_average` (
+  `province_name` STRING,
+  `average_value` DOUBLE
+);
+
+-- 各省总和
+CREATE TABLE `pm`.`provincial_sum` (
+  `province_name` STRING,
+  `total_sum` DOUBLE
+);
+
+-- 各省最大值
+CREATE TABLE `pm`.`provincial_max` (
+  `province_name` STRING,
+  `max_value` DOUBLE
+);
+
+-- 各省最小值
+CREATE TABLE `pm`.`provincial_min` (
+  `province_name` STRING,
+  `min_value` DOUBLE
+);
+
+-- 各省标准差
+CREATE TABLE `pm`.`provincial_std_dev` (
+  `province_name` STRING,
+  `std_deviation` DOUBLE
+);
+
+

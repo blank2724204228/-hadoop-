@@ -1,0 +1,11 @@
+chmod 777 12yue.csv 
+chmod 777 file_hive.properties 
+chmod 777 hive-site.txt 
+chmod 777 start_1.sh 
+chmod 777 start_2.txt 
+chmod 777 start_3.sh 
+chmod 777 start_4.sh 
+chmod 777 start_5.sh 
+chmod 777 start_6.sh 
+chmod 777 start_7.txt 
+chmod 777 start_8.sh 
